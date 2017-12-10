@@ -1,4 +1,4 @@
-package wavicle.utils.mostfreq.cmd;
+package wavicle.libdialog;
 
 @SuppressWarnings("serial")
 public class InputParseException extends Exception {

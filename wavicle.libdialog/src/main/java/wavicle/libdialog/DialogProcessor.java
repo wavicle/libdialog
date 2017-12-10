@@ -1,4 +1,4 @@
-package wavicle.utils.mostfreq.cmd;
+package wavicle.libdialog;
 
 import java.math.BigDecimal;
 import java.util.List;

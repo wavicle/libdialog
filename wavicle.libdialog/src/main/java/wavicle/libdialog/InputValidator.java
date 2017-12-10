@@ -1,4 +1,4 @@
-package wavicle.utils.mostfreq.cmd;
+package wavicle.libdialog;
 
 public interface InputValidator<T> {
 	boolean isValid(T input);

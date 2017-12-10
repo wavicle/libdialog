@@ -1,10 +1,10 @@
-package wavicle.utils.mostfreq.cmd;
+package wavicle.libdialog;
 
 import java.util.Arrays;
 
-import static java.lang.System.out;
+import wavicle.libdialog.DialogProcessor;
 
-import wavicle.utils.mostfreq.cmd.DialogProcessor;
+import static java.lang.System.out;
 
 public class CommandLineDemo {
 
