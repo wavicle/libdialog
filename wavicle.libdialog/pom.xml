@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>wavicle</groupId>
-	<artifactId>wavicle.utils.mostfreq</artifactId>
+	<artifactId>wavicle.libdialog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>wavicle.utils.mostfreq</name>
+	<name>wavicle.libdialog</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
