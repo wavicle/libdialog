@@ -3,7 +3,7 @@
 A Java library to quickly build command-line text-based applications. Features and usage are explained below.
 
 
-## Read simple text
+## Read a simple line of text
 
 First, we need to import the DialogProcessor:
 
