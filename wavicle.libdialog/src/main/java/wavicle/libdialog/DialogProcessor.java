@@ -5,15 +5,14 @@ package wavicle.libdialog;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * The Class DialogProcessor.
  */
 public class DialogProcessor {
 
-    /** The scanner. */
-    private Scanner scanner = new Scanner(System.in);
+    /** The transporter. */
+    private DialogTransporter transporter;
 
     /** The Constant NOOP_STRING_VALIDATOR. */
     private static final InputValidator<String> NOOP_STRING_VALIDATOR = anyString -> true;
@@ -33,6 +32,17 @@ public class DialogProcessor {
             throw new InputParseException("Not a valid number: '" + string + "' - please retry: ");
         }
     };
+
+    /**
+     * Instantiates a new dialog processor.
+     *
+     * @param transporter
+     *            the transporter
+     */
+    public DialogProcessor(DialogTransporter transporter) {
+        super();
+        this.transporter = transporter;
+    }
 
     /**
      * Displays the prompt followed by a numbered list of the passed options. The
@@ -144,19 +154,19 @@ public class DialogProcessor {
      * @return the t
      */
     public <T> T input(String prompt, InputParser<T> parser, InputValidator<T> validator) {
-        System.out.print(prompt);
+        transporter.write(prompt);
         while (true) {
-            String originalValue = scanner.nextLine();
+            String originalValue = transporter.readNext();
             T valueFromParsing;
             try {
                 valueFromParsing = parser.parse(originalValue);
                 if (validator.isValid(valueFromParsing)) {
                     return valueFromParsing;
                 } else {
-                    System.out.print(validator.buildErrorMessage(valueFromParsing));
+                    transporter.write(validator.buildErrorMessage(valueFromParsing));
                 }
             } catch (InputParseException e) {
-                System.out.print(e.getMessage());
+                transporter.write(e.getMessage());
             }
         }
     }
