@@ -27,7 +27,7 @@ hs_err_pid*
 .metadata
 bin/
 tmp/
-wavicle.utils.mostfreq/target/
+wavicle.libdialog/target/
 *.tmp
 *.bak
 *.swp
