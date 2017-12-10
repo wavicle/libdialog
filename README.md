@@ -1,6 +1,6 @@
 # libdialog
 
-A Java library to quickly build command-line text-based applications. Features and usage are explained below.
+A Java library to quickly build command-line and text-based applications. Features and usage are explained below.
 
 ## Usage and examples
 
