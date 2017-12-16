@@ -17,11 +17,8 @@ public class DialogProcessor {
     /** The Constant NOOP_STRING_VALIDATOR. */
     private static final InputValidator<String> NOOP_STRING_VALIDATOR = anyString -> true;
 
-    /** The Constant NOT_EMPTY_STRING_VALIDATOR. */
-    public static final InputValidator<String> NOT_EMPTY_STRING_VALIDATOR = theString -> theString != null && !theString.isEmpty();
-
     /** The Constant NOOP_PARSER. */
-    public static final InputParser<String> NOOP_PARSER = string -> string;
+    private static final InputParser<String> NOOP_PARSER = string -> string;
 
     /** The Constant BIG_DECIMAL_PARSER. */
     private static final InputParser<BigDecimal> BIG_DECIMAL_PARSER = string -> {

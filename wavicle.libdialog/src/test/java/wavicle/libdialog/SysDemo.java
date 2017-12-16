@@ -38,14 +38,23 @@ public class SysDemo {
          * white spaces). This is done by passing an instance of the InputValidator
          * interface. Below, we are passing a specific implementation of that interface.
          **/
-        line = Sys.input("Enter an empty string and I will prompt you again: ", DialogProcessor.NOT_EMPTY_STRING_VALIDATOR);
+        line = Sys.input("Enter an empty string and I will prompt you again: ", Libdialog.Validators.NOT_EMPTY_STRING);
         System.out.println("You entered the following non-empty string: " + line);
+
+        /**
+         * We have some inbuilt validator-builders. For example, in the example below,
+         * we will require that the input string must be alpha-numeric and must not
+         * contain any special characters such as # or %.
+         **/
+        line = Sys.input("Enter a string (try a non-alphanumeric character such as # to see the validation): ",
+                Libdialog.Validators.mustMatch("[a-zA-Z0-9]+", "Enter only numbers or letter (no special characters): "));
+        System.out.println("Good job! The following string has just alphabets or numbers: " + line);
 
         /**
          * What if you wanted to input a number? We can read a BigDecimal directly. The
          * expression has to be a valid number else it won't work.
          **/
-        number = Sys.inputNumber("Enter a number (if you enter an invalid string like '12.34abc' I won't accept it: ");
+        number = Sys.inputNumber("Enter a number (enter an invalid string like '12.34abc' to see validation): ");
         System.out.println("The valid number you entered is: " + number);
 
         /**
